@@ -7,13 +7,17 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+final class ViewController: UIViewController {
+    @IBOutlet private weak var countLabel: UILabel!
+    private var countNum = 0
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
+    @IBAction private func didTapCountUpButton(_ sender: UIButton) {
+        countNum += 1
+        countLabel.text = String(countNum)
     }
 
-
+    @IBAction private func didTapClearButton(_ sender: UIButton) {
+        countNum = 0
+        countLabel.text = String(countNum)
+    }
 }
-
